@@ -1,0 +1,135 @@
+/*
+https://fffuel.co/cccolor/
+https://coolors.co/d7af70-585b56-d34e24-56a3a6-bdadea
+*/
+
+/*
+B1D5DD
+C4DBDF
+BDDFB3
+A75353
+DFDDDB
+*/
+
+
+.menu-superior {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: fit-content; /* calc(60px + 5vmin); */
+  padding: 0 calc(0px + 5vmin);
+  background-color: #A75353;
+  color: #ffffff;
+  width: 100%;
+}
+
+.boton {
+  width: auto;
+}
+
+.contenedor-logo {
+  display: inline-flex;
+  align-items: center;
+  height: fit-content;
+  margin: 50px;
+  margin-right: calc(65px + 5vmin);
+}
+
+
+.logo img {
+  height: calc(40px + 5vmin);
+  z-index: 1;
+  margin-bottom: -7px;
+}
+
+.fondo-logo {
+  width: calc(45px + 5vmin);
+  height: calc(45px + 5vmin);
+  background-color: #DFDDDB;
+  border-radius: 25%;
+  display: inline-flex;
+  position: absolute;
+  z-index: 0;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.cuerpo {
+  background-color: #DFDDDB;
+  padding-bottom: 100px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+.simbolo-cargando {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 50px 0;
+}
+
+.cuerpo {
+  min-height: 100vh;
+  position: relative;
+}
+
+
+.pie-pagina {
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  background-color: #DFDDDB;
+  text-align: center;
+  padding: 10px;
+  /* flex */
+}
+
+#DataGrid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 500px 0;
+  height: fit-content;
+}
+
+.titulo {
+  margin-top: 20px;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+/* https://mui.com/x/migration/migration-data-grid-v4/ */
+.MuiDataGrid-root .MuiDataGrid-cell {
+  /*color: aqua;
+  border-color: #BDDFB3 !important;
+  justify-content: center !important;
+  */
+  border-bottom: none !important;
+}
+.MuiDataGrid-root .MuiDataGrid-columnHeaders {
+  border-bottom: none !important;
+}
+
+
+.markercluster-map {
+  height: 90vh;
+}
+
+/* Estilos para el grupo de marcadores */
+.marker-cluster-small {
+  background-color: rgba(0, 255, 0, 0.5);
+}
+
+.marker-cluster-medium {
+  background-color: rgba(255, 255, 0, 0.5);
+}
+
+.marker-cluster-large {
+  background-color: rgba(255, 0, 0, 0.5);
+}

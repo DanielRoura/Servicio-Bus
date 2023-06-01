@@ -1,0 +1,48 @@
+Listado de rutas de carpetas
+El número de serie del volumen es EE09-BE12
+C:.
+|   .gitignore
+|   .spaceignore
+|   arbol.txt
+|   Discovery.md
+|   icon.png
+|   README.md
+|   Spacefile
+|   
++---.space
+|   |   meta
+|   |   README
+|   |   
+|   \---micros
+|           recoger-datos.port
+|           
+\---recoger-datos
+    |   .env
+    |   favicon.ico
+    |   main.py
+    |   requirements.txt
+    |   
+    +---auxiliar
+    |       auxiliar.py
+    |       BD.py
+    |       calendario.py
+    |       constructores.py
+    |       env.py
+    |       extras.py
+    |       
+    +---buses
+    |       buses.py
+    |       funcionesBuses.py
+    |       
+    +---datos
+    |       datos.py
+    |       funcionesDatos.py
+    |       
+    +---lineas
+    |       formas.py
+    |       funcionesLinForm.py
+    |       lineas.py
+    |       
+    \---static
+            index.html
+            

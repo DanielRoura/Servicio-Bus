@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="A simple Python app deployed on Space" />
+  <title>Servicio de Datos Abiertos</title>
+  <style>
+    :root {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #121212;
+      color: #e0e0e0;
+      font-family: sans-serif;
+      padding: 2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> 
+    Servicio de recogida de datos abiertos
+  </h1>
+
+  <!--<img src="https://deta.space/docs_assets/developer.gif" alt="Cool GIF" />-->
+
+  <h2>
+    Logs
+  </h2>
+  <h3 id="estado">
+  </h3>
+  <h3 id="estado_datos">
+  </h3>
+
+  <ul id="log0"><li> CodBus // CodLin // Sentido // CodParIni // LastUpd </li></ul>
+  <ul id="log"></ul>
+
+  <script>
+    async function updateList() {
+      const list = document.getElementById("log");
+      const response = await fetch("/api/acciones/get_buses/11");
+      const logs = await response.json();
+      list.innerHTML = logs.map((log) => `<li>${log.codigo_bus} // ${log.codigo_linea} // ${log.sentido} // ${log.codigo_parada_inicial} // ${log.last_update} </li>`).join("");
+    }
+
+    updateList();
+
+    async function updateEstado() {
+      const list = document.getElementById("estado");
+      const response = await fetch("/api/recoleccion/estado");
+      const estado = await response.json();
+      list.innerHTML = estado.map((est) => `${est.estado}`).join("");
+    }
+
+    updateEstado();
+
+    async function updateEstadoDatos() {
+      const list = document.getElementById("estado_datos");
+      const response = await fetch("/api/datos/estado");
+      const estado = await response.json();
+      list.innerHTML = estado.map((est) => `${est.estado}`).join("");
+    }
+
+    updateEstadoDatos();
+  </script>
+</body>
+
+</html>

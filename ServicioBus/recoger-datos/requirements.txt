@@ -1,0 +1,11 @@
+fastapi
+deta
+pymongo
+requests
+python-multipart
+dnspython
+python-dotenv
+haversine
+geojson
+pytz
+scipy

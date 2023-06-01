@@ -1,0 +1,46 @@
+# Spacefile Docs: https://go.deta.dev/docs/spacefile/v0
+v: 0
+icon: ./icon.png
+app_name: "Servico Bus"
+micros:
+  - name: recoger-datos
+    src: ./recoger-datos
+    engine: python3.9
+    dev: uvicorn main:app --host 0.0.0.0 --reload 
+    primary: true
+    public_routes:
+      - "/api"
+      - "/api/*"
+    presets:
+      env:
+        - name: PY_URI
+          description: URI Base de datos
+          default: "mongodb+srv://DanielRoura:Cw7QYLCMaQsogWG7@clusterbuses.icsudrl.mongodb.net/?retryWrites=true&w=majority"
+        - name: PY_ORIGEN
+          description: Origen de la aplicación
+          default: "Deta Space"
+        - name: PY_GUARDAR_DATOS
+          description: En "True" guarda los datos, en otro valor los mete en una tabla temporal
+          default: "False"
+        - name: PY_RECOLECCION_ACTIVA
+          description: Valor a "True" para que la aplicación recoja datos periódicamente
+          default: "True"
+        - name: PY_REESCRIBIR_DATOS
+          description: Reescribe los datos en set_Datos
+          default: "False"
+    actions:
+        - id: "get_datos"
+          name: "Recoger datos"
+          description: "Recoger datos cada minuto de cada hora"
+          trigger: "schedule"
+          default_interval: "* 6-23 * * *"
+        - id: "set_linea_analizada_hora"
+          name: "Analiza línea"
+          description: "analiza la línea"
+          trigger: "schedule"
+          default_interval: "0 6-23 * * *"
+        - id: "set_tiempos_ahora"
+          name: "Calcula datos"
+          description: "Calcula los datos cada hora"
+          trigger: "schedule"
+          default_interval: "0 6-23 * * *"
